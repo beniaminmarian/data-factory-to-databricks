@@ -1,0 +1,9 @@
+2:param location string = resourceGroup().location
+5:param administratorLogin string = 'myadminname'
+9:param administratorLoginPassword string = newGuid()
+12:param userObjectId string
+15:param userTenantId string
+18:param username string
+21:param tenantId string = subscription().tenantId
+23:param secretsExpirationDate int
+778:    parameters: {
