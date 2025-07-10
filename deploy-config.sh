@@ -17,6 +17,8 @@ export USER_TENANT_ID="6df5d9b1-2807-4c12-a223-63909d98a6f2"
 # Deployment settings
 export DEPLOYMENT_NAME="main-$(date +%Y%m%d%H%M%S)"
 export SECRETS_EXPIRATION_DAYS=$(date -d "+1 year" +%Y-%m-%d) 
+export SECRETS_EXPIRATION_TIMESTAMP=$(date -d "+1 year" +%s)
+export TAGS="Environment=IaC Project=DevOps Pipeline Owner= ${USERNAME}"
 
 echo "Configuration complete:"
 echo "Username: $USERNAME"
@@ -27,5 +29,10 @@ echo "Secrets Expiration Date: $SECRETS_EXPIRATION_DAYS"
 echo "User Object ID: $USER_OBJECT_ID"
 echo "User Tenant ID: $USER_TENANT_ID"
 echo "Deployment Name: $DEPLOYMENT_NAME"
+echo 'Tags: '"$TAGS"
 echo " "
-EOF
+echo "Configuration variables set successfully."
+echo "======================================="
+echo "Ready to deploy Azure resources with the above configuration."
+
+# End of deploy-config.sh
